@@ -1,23 +1,23 @@
-# Wyprawy kosmiczne repozytorium girls.js Poznań 
+# "Wyprawy kosmiczne" Space expeditions girls.js repository Poznan
 
 
-### Konfiguracja
-Konfiguracja strony korzysta z Github Pages oraz generatora stron Jekyll (dostępny domyślnie z Github Pages).
+### Config
+Site configuration uses Github Pages and Jekyll page builder (available by default with Github Pages).
 
-Github Actions wykonują build & deploy w pliku `.github/jekyll-gh-pages.yml`. Dodatkowo ustawienia szablonu znajdują się w `_config.yml`. 
+Github Actions perform build & deploy in the `.github/jekyll-gh-pages.yml` file. In addition, the template settings are located in `_config.yml`.
 
-Szablony jekyll: https://jekyllrb.com/docs/pages/
+Templates from jekyll: https://jekyllrb.com/docs/pages/
 
-Wszystkie dodatkowe informacje jak korzystać z szablonu znajdują się w pliku `THEME.md` w folderze docs.
+All additional information on how to use the template can be found in the `THEME.md` file in the docs folder.
 
 
-### Dodawanie podstron
+### How to add pages?
 
-W skrócie:
+In brief:
 
-Podręcznik dzieli się na podstrony `_pages` - kolejne rozdziały warsztatów. 
+The manual is divided into `_pages` subpages - subsequent chapters of the workshop.
 
-Wszystkie chaptery warsztatów muszą być w formacie **markdown** i być umieszczone w folderze `_posts`. Dodatkowo pliki muszą posiadać odpowiednią sformatowany nagłówek.
+All workshop chapters must be in **markdown** format and placed in the `_posts` folder. In addition, the files **must have a properly formatted header** (important to be correctly displayed).
 
 ```md
 
@@ -32,8 +32,8 @@ cover: ../assets/cover.png
 
 ```
 
-- obowiązkowo: title, layout
-- opcjonalnie: author, date, category, cover
+- obligatory: title, layout
+- optional: author, date, category, cover
 
 
-Posty są sortowane automatycznie wg numerów chapterów - zachowaj konwencję
+Posts are sorted automatically by chapter number - please keep the convention
