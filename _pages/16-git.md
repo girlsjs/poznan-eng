@@ -4,60 +4,60 @@ layout: post
 ---
 
 
-GIT to narzędzie do kontrolowania zmian w projekcie.  Tworzy on historię i umożliwia sprawną współpracę między wieloma programistami. By korzystać z GITa warto poznań kilka pojęć:
+GIT is a tool for controlling changes in a project. It creates a history and enables efficient collaboration among multiple programmers. To use GIT, it's worth learning a few concepts:
 
-**terminal** - aplikacja tekstowa służąca do przeglądania, obsługi i operowania plikami na Twoim komputerze. Jak go uruchomić?
+**terminal** - a text application used for browsing, handling, and manipulating files on your computer. How to launch it?
 
-Windows: Start → Wszystkie programy → Akcesoria → Wiersz poleceń
+Windows: Start → All Programs → Accessories → Command Prompt
 
-Mac OS: Aplikacje → Narzędzia → Terminal
+Mac OS: Applications → Utilities → Terminal
 
-Linux: Aplikacje → Akcesoria → Terminal
+Linux: Applications → Accessories → Terminal
 
-**repozytorium** - miejsce, gdzie znajduje się nasza aplikacja. To historię tego folderu obserwuje GIT. Na komputerze można mieć kilka takich folderów.
+**repository** - a place where our application is located. GIT observes the history of this folder. You can have multiple such folders on your computer.
 
-**commit** - paczka zmian, która jest częścią historii danego repozytorium. W trakcie pracy nad projektem tworzysz kolejne commity i zarządzasz nimi
+**commit** - a package of changes that is part of the history of a given repository. While working on a project, you create additional commits and manage them.
 
-**branch** - gałąź Twojego projektu. Programiści pracują na osobnych branchach, np. nad różnymi funkcjonalnościami strony, po czym łączą je w jedną całość.
+**branch** - a branch of your project. Programmers work on separate branches, e.g., on different functionalities of a website, and then merge them into one entity.
 
-### Instalacja GITa:
+### GIT Installation:
 
 [https://git-scm.com/downloads](https://git-scm.com/downloads)
 
-### Podstawowe komendy:
+### Basic Commands:
 
-* **git init** - inicjalizuje repozytorium GIT w danym katalogu
+* **git init** - initializes a GIT repository in the specified directory.
 
-* **git add nazwa\_pliku** - dodaje zmiany we wskazanym pliku do commita
+* **git add file_name** - adds changes in the specified file to the commit.
 
-* **git commit -m "treść\_commita"** - dodaje opis do commita
+* **git commit -m "commit_message"** - adds a description to the commit.
 
-* **git add origin adres\_repozytorium**, np. [https://github.com/username/moje-repozytorium.git](https://github.com/username/moje-repozytorium.git) - ustawia konkretny adres zdalnego repozytorium jako główne repozytorium
+* **git add origin repository_address**, e.g., [https://github.com/username/my-repository.git](https://github.com/username/my-repository.git) - sets a specific remote repository address as the main repository.
 
-* **git push origin master** - wysłanie zmian do branacha zdalnego
+* **git push origin master** - sends changes to the remote branch.
 
-* **git checkout nazwa\_brancha** - zmienia aktywny branch na wybrany przez użytkownika
+* **git checkout branch_name** - changes the active branch to the one chosen by the user.
 
-* **git pull** - pobranie zmian ze zdalnego repozytorium
+* **git pull** - fetches changes from the remote repository.
 
-### Zadanie:
+### Task:
 
-1. Zainstaluj na swoim komputerze GITa zgodnie z instrukcją na stronie:[ https://git-scm.com/book/pl/v1/Pierwsze-kroki-Instalacja-Git](https://git-scm.com/book/pl/v1/Pierwsze-kroki-Instalacja-Git).
-2. Załóż konto na [github.com](https://github.com/).
-3. Na GitHubie stwórz nowe repozytorium.
-4. W katalogu ze stroną "A jednak się kręci" zainicjuj repozytorium GITa.
-5. Wyślij pliki z tego folderu do zdalnego repozytorium na GitHubie.
+1. Install GIT on your computer following the instructions on this page: [https://git-scm.com/book/en/v2/Getting-Started-Installing-Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+2. Create an account on [github.com](https://github.com/).
+3. Create a new repository on GitHub.
+4. Initialize a GIT repository in the directory containing the "A jednak się kręci" page.
+5. Send the files from this directory to the remote repository on GitHub.
 
 ## GitHub Pages
 
-GitHub oferuje także hosting Twoich stron.
+GitHub also offers hosting for your pages.
 
-### Zadanie:
+### Task:
 
-1. Stwórz na GitHub nową organizację lub repozytorium.
-2. Na podstawie instrukcji zamieszczonej na stronie: [https://pages.github.com/](https://pages.github.com/) zamieść stronę "Wyprawy Kosmiczne" na GitHub Pages. 
-3. Wyświetl nową stronę w przeglądarce.
+1. Create a new organization or repository on GitHub.
+2. Based on the instructions provided on this page: [https://pages.github.com/](https://pages.github.com/), publish the "Wyprawy Kosmiczne" page on GitHub Pages.
+3. View the new page in your browser.
 
-**Podpowiedź:**
+**Hint:**
 
-[O Github Pages krok po kroku](https://www.flynerd.pl/2018/02/opublikowac-strone-internetowa-github-pages-krok-kroku.html)
+[Step-by-step guide on GitHub Pages](https://www.flynerd.pl/2018/02/opublikowac-strone-internetowa-github-pages-krok-kroku.html)
