@@ -1,5 +1,5 @@
 ---
-title: 3. Konsola przeglądarki
+title: 3. Browser console
 layout: post
 ---
 
