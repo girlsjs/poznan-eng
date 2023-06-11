@@ -1,75 +1,78 @@
 ---
-title: 7. Instrukcje warunkowe
+title: 7. Conditional instructions
 layout: post
 ---
 
-Niektóre wydarzenia dzieją się tylko wtedy, gdy zostanie spełniony jakiś warunek. Np. woda zacznie wrzeć, gdy osiągnie temperaturę 100 stopni, a drzwi otworzysz tylko wtedy, gdy masz pasujący klucz. Podobnie dzieje się w języku JavaScript - instrukcja warunkowa wykonuje wybrany kod, w zależności od tego czy wartość danego wyrażenia jest logiczną prawdą \(true\) czy logicznym fałszem \(false\).
+Some events only happen when a certain condition is met. For example, water starts boiling when it reaches a temperature of 100 degrees, and you open a door only when you have the right key. The same thing happens in the JavaScript language - a conditional statement executes a selected code depending on whether the value of a given expression is logically true \(true\) or logically false \(false\).
+
 
 ### if...else...
 
-Jak wygląda instrukcja warunkowa? Kluczowym elementem jest wyrażenie **if:**
+The conditional statement is structured with the **if** expression as its key element.
 
 ```js
-if (warunek) {
+if (condition) {
 
-    ...polecenie, które wykonuje się, gdy warunek jest spełniony
+    ...command that executes when a condition is met
 }
 ```
 
-np.
+for example:
 
 ```js
 let x = 34;
 
 if (x < 100) {
-    console.log('Liczba jest mniejsza od 100');
+    console.log('The number is lower than 100');
 }
 ```
 
 ```js
  if (x < 10) {
-     console.log('Liczba jest mniejsza od 10');
+     console.log('The number is lower than 10');
  }
 ```
 
-Kolejny element instrukcji warunkowej to **else**, czyli polecenie, które wykonuje się jeśli jednak warunek nie jest spełniony.
+Another element of the conditional statement is the **else** statement, which is executed when the condition is not met.
 
-np.
+for example:
 
 ```js
 let x = 34;
 
 if (x < 100) {
-     console.log('Liczba jest mniejsza od 100');
+     console.log('The number is lower than 100');
 } else {
-     console.log('Liczba jest większa od 100');
+     console.log('The number is higher than 100');
 }
 
 
 if (x < 10) {
-     console.log('Liczba jest mniejsza od 10');
+     console.log('The number is lower than 10');
 } else {
-     console.log('Liczba jest większa od 10');
+     console.log('The number is higher than 10');
 }
 ```
 
-Możemy też sprawdzać kilka warunków jeden po drugim. Służy do tego **else if**,
+We can also check several conditions one by one. The **else if** is used for this:
+
 
 ```js
 if (x < 10) {
-     console.log('Liczba jest mniejsza od 10');
+     console.log('The number is lower than 10');
 }  else if (x > 10) {
-     console.log('Liczba jest większa od 10');
+     console.log('The number is higher than 10');
 } else {
-     console.log('Liczba jest równa 10');
+     console.log('The number is equal to 10');
 }
 ```
 
-W swoim pliku JS stwórz dwie zmienne o nazwach a i b. Przypisz do nich dwie różne liczby. Następnie zapisz następujący warunek: jeśli a jest większe od b, w konsoli powinien ukazać się napis "a jest większe od b". Jeśli b jest większe, w konsoli powinnaś zobaczyć "b jest większe od a".
+In your JavaScript file, create two variables named a and b. Assign two different numbers to them. Then write the following condition: if a is greater than b, the console should display the message "a is greater than b". If b is greater, you should see "b is greater than a" in the console.
+
 
 ### switch
 
-**Warunki można również sprawdzać za pomocą instrukcji switch.**
+**Conditions can also be checked using the `switch` command.**
 
 ```js
 let language = 'Spanish';
@@ -92,41 +95,41 @@ switch (language) {
 }
 ```
 
-Zauważ, że każdy przypadek kończy się słowem **break.** Break przerywa wykonywanie instrukcji switch. Oznacza to, że jeśli któryś ze wskazanych przypadków zostanie spełniony, dalsze porówniania nie będą już wykonywane. Jeżeli pominiemy to słowo, wówczas nawet przy pomyślnym przyrównaniu zostaną wykonane kolejne sprawdzenia. Naszą instrukcję switch kończy specjalny przypadek **default**, który będzie wybierany, gdy wszystkie inne przypadki będą błędne.
+Notice that each case ends with the keyword **break;**. Break interrupts the execution of the switch command. This means that if any of the specified cases is met, further comparisons will not be executed. If we omit this keyword, even if a successful match occurs, the next checks will still be performed. Our switch statement is concluded with a special case called **default**, which will be selected when all other cases are incorrect.
 
-### Zadanie:
+### Task:
 
-Stwórz w swoim pliku JS zmienną o nazwie `weather` i przypisz do niej wartość "sun". Następnie, używając instrukcji `switch` spraw, aby w konsoli ukazał się następujący tekst:
+Create a variable named `weather` in your JS file and assign the value "sun" to it. Then, using the `switch` statement, make the following text appear in the console:
 
-* gdy zmienna `weather` jest równa "sun" - "It's sunny! 🌞"
-* gdy zmienna `weather` jest równa "rain" = "It's raining! 🌧️"
-* gdy zmienna `weather` jest równa "wind" = "It's windy! 🌬️"
+* when the variable `weather` is equal to "sun" - "It's sunny! 🌞"
+* when the variable `weather` is equal to "rain" = "It's raining! 🌧️"
+* when the variable `weather` is equal to "wind" = "It's windy! 🌬️"
 
-Teraz przypisz do zmiennej `weather` wartość "rain" i zobacz, jak zmienia się tekst w konsoli. To samo sprawdź przypisując do niej wartość "wind".
+Now assign the value "rain" to the variable `weather` and see how the text in the console changes. Check the same thing by assigning the value "wind" to it.
 
-**Instrukcja if..else... korzysta z operatorów porównania**
+**Instruction if..else... uses comparison operators**
 
-Nie zawsze wszystko jest albo większe albo mniejsze, albo równe. Może przecież być większe lub równe, mniejsze lub równe, itp. W JS mamy do dyspozycji następujące operatory porównania:
+Everything is not always either greater or lesser or equal. After all, it can be greater than or equal to, less than or equal to, etc. In JS, we have the following comparison operators at our disposal:
 
 `let x = 34;`
 
-| Operator | Opis | Równanie | Zwróci |
+| Operator | Description | Example | Returns |
 | :--- | :--- | :--- | :--- |
-| == | równe | x == 56 | false |
-| != | różne | x != 56 | true |
-| === | równa wartość i taki sam typ danych | x === 34 | true |
+| == | equal to | x == 56 | false |
+| != | not equal to | x != 56 | true |
+| === | equal value and equal type | x === 34 | true |
 |  |  |  |  |
 |  |  | x === "34" | false |
-| !== | różne wartości lub różny typ danych | x !== "34" | true |
+| !== | not equal value or not equal type | x !== "34" | true |
 |  |  | x !== 34 | false |
-| &gt; | większe od | x &gt; 67 | false |
-| &lt; | mniejsze od | x &lt; 67 | true |
-| &gt;= | większe bądź równe od | x &gt;= 56 | false |
-| &lt;= | mniejsze bądź równe od | x &lt;= 56 | true |
+| &gt; | greater than | x &gt; 67 | false |
+| &lt; | less than | x &lt; 67 | true |
+| &gt;= | greater than or equal to | x &gt;= 56 | false |
+| &lt;= | less than or equal to | x &lt;= 56 | true |
 
-Zwróć uwagę, że w JS pojedynczy znak równości przypisuje wartość np. do zmiennej. Z kolei podwójny znak równania == to porównanie dwóch wartości, a dokładniej sprawdzenie, czy są takie same.
+Note that in JS, a single equals sign assigns a value to a variable, for example. The double equals sign ==, on the other hand, is a comparison of two values, or more precisely, a check to see if they are the same.
 
-**Możemy też spotkać operatory logiczne:**
+**We can also encounter logical operators:**
 
 `let x = 34;`
 
@@ -134,10 +137,10 @@ Zwróć uwagę, że w JS pojedynczy znak równości przypisuje wartość np. do 
 
 | Operator | Opis | Przykład | Wynik |
 | :--- | :--- | :--- | :--- |
-| && | and \(i\) | \(x &lt; 100 && y &gt; 10\) | Prawda \(x jest mniejsze od 100 **i **y jest większe od 10\) |
-| II | or \(lub\) | \(x &gt; 80 II y &gt; 10\) | Prawda, bo x nie jest większe od 80, ale y jest większe od 10 |
-| ^ | xor \(jeden z, ale nie dwa równocześnie\) | \(x === 34 ^ y === 13\) | Fałsz, bo obydwa są prawdziwe |
-| ! | not \(negacja\) | !\(x == y\) | Prawda, bo negujemy to, że x == y |
+| && | and | \(x &lt; 100 && y &gt; 10\) | True \(x is less than 100 **i** y is greater than 10\) |
+| II | or  | \(x &gt; 80 II y &gt; 10\) | True, because x is not greater than 80, but y is greater than 10 |
+| ^ | xor \(one of, but not two simultaneously\) | \(x === 34 ^ y === 13\) | False, because both are true |
+| ! | not | !\(x == y\) | True, because we negate  that x is equal to y |
 
 
 
