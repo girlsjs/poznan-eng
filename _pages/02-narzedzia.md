@@ -1,5 +1,5 @@
 ---
-title: 2. Narzędzia
+title: 2. Tools
 layout: post
 ---
 
