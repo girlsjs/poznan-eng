@@ -1,15 +1,15 @@
 ---
-title: 6. Szkielet projektu
+title: 6. Project wireframe
 layout: post
 ---
 
-Dość zapisywania zmiennych w konsoli, czas stworzyć ramy naszego projektu i zacząć pracować z prawdziwymi plikami!
+Enough with printing variables in the console, it's time to create a wireframe for our project and start working with real files!
 
-Na sam początek stwórz w wybranej lokalizacji \(np. na pulpicie\) nowy folder. To w nim będziemy zapisywać pliki z naszego projektu. Potrzeba nam trzech plików - pierwszy z kodem HTML, drugi z kodem CSS i trzeci z kodem JavaScript. Takie pliki możemy dodawać z poziomu edytora - otwórz w edytorze stworzony przez siebie folder i dodaj nowe pliki albo możesz tworzyć pliki bezpośrednio w wybranej lokalizacji. Pamiętaj tylko, by dodać im odpowiednie rozszerzenia.
+At the very beginning, create a new folder in a location of your choice \(for example, on the desktop\). This is where we will save the files for our project. We need three files - the first one with HTML code, the second one with CSS code, and the third one with JavaScript code. We can add such files from within the editor - open the folder you created in the editor and add new files, or you can just create files directly in the location of your choice. Just remember to add appropriate extensions to them.
 
-### Plik HTML
+### HTML file
 
-Najpierw stwórz plik `index.html` i wklej do niego następujący kod:
+First, create a file called `index.html` and paste the following code into it:
 
 ```
 <!DOCTYPE html>
@@ -23,37 +23,40 @@ Najpierw stwórz plik `index.html` i wklej do niego następujący kod:
 </html>
 ```
 
-Teraz kliknij dwukrotnie na plik `index.html`, który masz zapisany w folderze. Powinien się automatycznie otworzyć w przeglądarce. Powinnaś widzieć napis **Let's make some magic here!** i mieć możliwość przejścia do konsoli. Udało się? Świetnie! Czas na dodanie stylów.
+Now double-click on the `index.html` file you have saved in the folder. It should automatically open in your browser. You should see the caption **Let's make some magic here!** and be able to go to the console. Did it work? Great! Time to add the styles.
 
-### Plik CSS
 
-W tym samym folderze utwórz kolejny folder o nazwie `css`, a w nim plik `style.css`. Teraz musimy powiedzieć przeglądarce, skąd ma brać style dla naszego kodu HTML. W tym celu dodamy do kodu HTML w znaczniku `<head>` następującą linijkę:
+
+### CSS file
+
+In the same folder, create another folder named `css`, and inside it, create a file called `style.css`. Now we need to tell the browser where to find the styles for our HTML code. To do that, add the following line inside the `<head>` tag of the HTML code:
 
 `<link rel="stylesheet" href="css/style.css">`
 
-Do pliku `style.css` wklej poniższy kod:
+In the `style.css` file, paste the following code:
 
 ```css
 h1 { 
     color: red;
 }
 ```
+Save the `style.css` file and refresh your preview of the `index.html` file in the browser. The text **Let's make some magic here!** should now appear in red. This confirms that the style file is properly linked to the HTML file. Now it's time for the most important part - the JavaScript file.
 
-Zapisz plik `style.css` i odśwież Twój podgląd pliku `index.html` w przeglądarce. Napis **Let's make some magic here!** powinien być teraz czerwony. Dzięki temu wiemy, że plik ze stylami jest prawidłowo podłączony do pliku html. Teraz czas na najważniejsze, czyli plik JavaScript.
+### JavaScript file
 
-### Plik JavaScript
-
-W swoim folderze stwórz kolejny folder, tym razem o nazwie `js`. W nim utwórz plik `app.js`. To tutaj będziemy zapisywać nasz cały kod JavaScript, dzięki któremu na naszej stronie będzie się działa magia ;\) Aby podłączyć nasz skrypt do strony w HTML, przed zamknięciem znacznika &lt;/body&gt; wklej następującą linijkę:
+In your folder, create another folder, this time named `js`. Inside it, create a file called `app.js`. This is where we will write all our JavaScript code that will make the magic happen on our webpage ;\) To connect our script to the HTML page, add the following line just before the closing &lt;/body&gt; tag:
 
 `<script src="js/app.js"></script>`
 
-Ale skąd będziemy wiedzieć, że nasz plik JS naprawdę jest dobrze podłączony? 
+But how will we know if our JS file is properly connected?
 
-**Musimy sprawdzić konsolę!**
+**We need to check the console!**
 
-W pliku `app.js` dodaj kod:
+In the `app.js` file, add the following code:
 
-`console.log('działa!');`
+`console.log('it works!');`
 
-Teraz zapisz plik JS, odśwież podgląd pliku `index.html` w przeglądarce i przejdź do konsoli. Powinnaś zobaczyć tam napis "działa!". To znak, że z Twoim plikiem JS wszystko jest w porządku i możesz ruszyć do wykonywania kolejnych zadań :\)
+Save the JS file, refresh the preview of the index.html file in the browser, and go to the console. You should see the message "it works!" there. This indicates that your JS file is working correctly, and you can proceed with the next tasks :\)
+
+
 
