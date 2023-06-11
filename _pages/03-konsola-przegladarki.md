@@ -4,36 +4,35 @@ layout: post
 ---
 
 
-Na początku swojej przygody z językiem JavaScript warto zaprzyjaźnić się z konsolą przeglądarki. Jest to miejsce, gdzie jesteś w stanie szybko przetestować kod, ale też znaleźć informacje o błędach, które się pojawiły. W przeglądarce Chrome konsolę otwieramy za pomocą Ctrl+Shift+J, w Firefoxie Ctrl+Shift+K. W obu działa skrót F12 ;) Możesz też kliknąć prawym przyciskiem myszy w dowolnym miejscu otwartej strony, wybrać opcję "Zbadaj"/"Inspect", a potem przejść od zakładki "Console", gdy otworzą się narzędzia deweloperskie.  
+To start your journey with JavaScript, it's worth getting familiar with the browser console. This is the place where you are able to quickly test the code, but also find information about errors that have occurred. In Chrome browser, you can open the console using Ctrl+Shift+J, and in Firefox, you can use Ctrl+Shift+K. In both browsers, the F12 key would work as well ;) Alternatively, you can right-click anywhere on an open page, select "Inspect" and then navigate to the "Console" tab when the developer tools open.
 
 ![](/poznan/assets/devtools.png)
 
-Wpisz w konsoli `console.log('Hello World!');` i naciśnij klawisz Enter.
-Twoja wiadomość powinna się wyświetlić pod spodem. Teraz wpisz `console.log(33+5);`
+Type `console.log('Hello World!');` in the console and press Enter. 
+Your message should be displayed below. Now, enter `console.log(33+5);`.
 
-Właśnie wykonałaś swoje pierwsze operacje w JavaScript!
+You have just performed your first JavaScript operations!
 
-To, co wpisujesz bezpośrednio z konsoli \(z poziomu przeglądarki\), nie zostanie zapisane. Jednak jest to bardzo przydatne, gdy chcemy sprawdzić jakieś wartości np. zmiennych. Kiedy chcemy, by coś cały czas było pokazywane w konsoli, będziemy musieli wprowadzić kod w naszym pliku JavaScript, a potem sprawdzić konsolę. Konsola jest bardzo ważnym narzędziem przy pracy z kodem. To w niej będziemy sprawdzać, czy dobrze przypisałyśmy wartości do zmiennych, czy nasze funkcje dobrze działają, itd. Ale najpierw - treść strony!
+Note that anything you enter directly into the console \(within the browser\) won't be saved. However, it is very useful when you want to check the values of variables, for example. When you want something to be continuously displayed in the console, you'll need to enter the code in your JavaScript file and then check the console. The console is a very important tool when working with code. It allows us to check if we have assigned values to variables correctly, if our functions are working correctly, and so on. But first, let's move on to the page content!
 
-Przejdźmy teraz do zakładki "Elements". Możesz tu zobaczyć całą strukturę swojej strony, czyli jej cały kod HTML oraz CSS. HTML odpowiada na szkielet naszej strony, tzn. informuje przeglądarkę, jakie elementy mają znaleźć się na stronie \(np. nagłówki, obrazki, bloki tekstu\). Z kolei CSS odpowiada za wygląd elementów, to reguły CSS powiedzą przeglądarce, np. jaki kolor ma mieć nagłówek.
+Now, let's go to the "Elements" tab. Here, you can see the entire structure of your page, which includes the HTML and CSS code. HTML is responsible for the frame of our page, i.e. it tells the browser what elements are to be on the page \(e.g., headers, images, text blocks\). CSS, on the other hand, is responsible for the appearance of elements. CSS rules define properties such as the color of a header.
 
 ![](/poznan/assets/elements.png)
 
-Kliknij prawym przyciskiem myszy w dowolny element strony i wybierz "Zbadaj". Możesz go teraz łatwo znaleźć w strukturze strony. Kiedy najedziesz kursorem na część kodu HTML, ten element, za który dany fragment kodu odpowiada, zostanie zaznaczony. Dzięki temu możesz łatwo sprawdzić, jaki kod odpowiada za wybrane elementy.
+Right-click on any element of the page and choose "Inspect". Now you can easily find it in the page structure. When you hover over a part of the HTML code, the corresponding element will be highlighted. This allows you to easily identify which part of code is responsible for the selected elements.
 
 ![](/poznan/assets/code-part.png)
 
-W tym miejscu powinnyście też znaleźć zakładkę "Styles" gdzie znajdziecie wszystkie style elementu który właśnie zaznaczyłyście. 
+Here you should also find the "Styles" tab, where you can see all the styles applied to the element you just selected.
 
 ![](/poznan/assets/styles.png)
 
-Przykładowo: zaznaczony przez nas tekst **KOBIECA STRONA JAVASCRIPTU** ma:  
+For example, the highlighted text **KOBIECA STRONA JAVASCRIPTU** has the following styles:  
 `background: #ffc303;`  
 `padding: 2px 10px;`
 
-Zmieńmy wartość `background` na `red`;
+Let's change the `background` value to `red`;
 
 ![](/poznan/assets/bg-red.png)
 
-Tło naszego tekstu zmieniło kolor! Warto dodać, że te zmiany nie zapisują się na stałe. Jeśli teraz odświeżymy przeglądarkę, nasza zmiana koloru zniknie. Takie modyfikacje bezpośrednio w przeglądarce służą do sprawdzenia, jak wyglądałaby nasza strona, gdyby miała dane style CSS. Aby nasz nagłówek miał cały czas czerwone tło, musiałybyśmy zrobić zmianę w pliku z kodem.
-
+The background of our text has changed color! It's worth noting that these changes are not permanent. If we refresh the browser now, our color change will disappear. Such modifications directly in the browser are used to check how our page would look with specific CSS styles. To make our header have a red background all the time, we would have to make a change in the code file.
