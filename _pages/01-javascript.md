@@ -1,5 +1,5 @@
 ---
-title: 1. O JavaScript
+title: 1. About JavaScript
 layout: post
 ---
 
