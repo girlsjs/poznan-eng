@@ -1,27 +1,33 @@
 ---
-title: 5. Typy
+title: 5. Types
 layout: post
 ---
 
-`sum` z wartością 99 to zmienna typu liczbowego \(**number**\). Oprócz liczb JS korzysta też z innych typów danych:
+`sum` with a value of 99 is a variable of type \(**number**\). In addition to numbers, JS also uses other data types:
 
-**string** - ciąg znaków. Są zapisywane w cudzysłowiu lub apostrofach, np. 'Programiści JS są super'
+**string** - a string of characters. They are written in quotation marks or apostrophes, e.g. 'JS programmers are cool'
 
-**zmienna typu logicznego \(boolean\) **- true \(logiczna prawda\) lub false \(logiczny fałsz\)
+**variable of logical type \(boolean\)**- true \(logical truth\) lub false \(logical false\)
 
-**null **- czyli pusty obiekt
+**null**- meaning an empty object
 
-**undefined **- wartość niezdefiniowana
+**undefined**- undefined value
 
-Jak sprawdzić typ zmiennej? Służy do tego instrukcja `typeof`, np. `typeof sum`
+
+To check the type of a variable, you can use `typeof`, for example, `typeof sum`.
+
+
+Now, try creating a variable with your name. In the console, type `let name = "enter your name here";`. Then, write `console.log(name);`. You should see your name in the console. Check the type of your `name` variable by typing `console.log(typeof name);` in the console.
 
 Spróbuj teraz stworzyć zmienną ze swoim imieniem. W konsoli wpisz `let name = "tu podaj swoje imię";` Następnie napisz `console.log(name);`. Powinnaś zobaczyć swoje imię w konsoli. Sprawdź jakiego typu jest Twoja zmienna `name` przez wpisanie w konsoli `console.log(typeof name);`
 
-### Liczby i operatory
 
-Na liczbach możemy wykonywać działania matematyczne. Służą nam do tego operatory przedstawione w poniższej tabelce.
 
-Załóżmy, że mamy następujące zmienne: 
+### Numbers and Operators
+
+We can perform mathematical operations on numbers using operators, as shown in the table below.
+
+Let's assume we have following variables:
 
 ```js
 let y = 8;
@@ -30,66 +36,66 @@ let z = 4;
 
 ```
 
-|  | Operator | Równanie | Wynik |
+|  | Operator | Equation | Result |
 | :--- | :--- | :--- | :--- |
-| + | Dodawanie | x = y + z | x = 12 |
-| - | Odejmowanie | x = y - z | x = 4 |
-| \* | Mnożenie | x = y \* z | x = 32 |
-| / | Dzielenie | x = y / z | x = 2 |
-| % | Reszta z dzielenia | x = y % 3 | x = 2 |
-| ++ | Inkrementacja | x = ++y | x = 9 |
+| + | Addition | x = y + z | x = 12 |
+| - | Subtraction | x = y - z | x = 4 |
+| \* | Multiplication | x = y \* z | x = 32 |
+| / | Division | x = y / z | x = 2 |
+| % | Remainder | x = y % 3 | x = 2 |
+| ++ | Increment | x = ++y | x = 9 |
 |  |  | x = y++ | x=8; y = 9; |
-| -- | Dekrementacja | x = --y | x = 7 |
+| -- | Decrement | x = --y | x = 7 |
 |  |  | x = y-- | x = 8; y = 7 |
 
-Spróbuj teraz zapisać kilka takich działań w konsoli. Najpierw stwórz dwie dowolne zmienne liczbowe, a potem wypisz przy pomocy `console.log` w konsoli wyniki działań.
+Now, try writing a few of these operations in the console. First, create two arbitrary number variables, and then use `console.log` to print the results of the operations in the console.
 
-### Stringi
+### Strings
 
-**Na stringach również można robić pewne operacje. Możemy je do siebie dodawać \(nazywa się to konkatenacja\).**
+**We can also perform certain operations on strings, for example we can add them to each other \(this is called concatenation\).**
 
 ```js
 let text_1 = "Hello";
 let text_2 = "Jack";
-let text3 = text_1 + ', ' + text_2 + '!'; // Hello, Jack!
+let text_3 = text_1 + ', ' + text_2 + '!'; // Hello, Jack!
 ```
 
-Stwórz zmienną `surname` i przypisz do niej swoje nazwisko. Następne zdefiniuj kolejną zmienną o nazwie `fullName` i spraw, by jej wartością były Twoje dwie wcześniejsze zmienne, czyli imię i nazwisko. Wypisz wartość zmiennej `fullName` w konsoli.
+Create a variable named `surname` and assign it your last name. Then, define another variable named `fullName` and make its value your two previous variables, so your name and surname, separated by a space. Print the value of the `fullName` variable in the console.
 
-**Do sprawdzenia długości tekstu służy właściwość **`length`
+**The `length` property is used to determine the length of a string.**
 
 ```js
 text_3.length; // 12
 ```
 
-Sprawdź, wypisując w konsoli, jaka jest długość trzech Twoich zmiennych tekstowych \(`name`, `surname`, `fullName`\).
+Check the lengths of three of your string variables \(`name`, `surname`, `fullName`\) by printing them in the console.
 
-**Możemy też zmienić znaki w tekście na duże lub małe:**
+**We can also change the case of characters in a string to uppercase or lowercase:**
 
 ```js
 text_3.toUpperCase(); // HELLO, JACK!
 text_3.toLowerCase(); // hello, jack!
 ```
 
-Spraw, aby Twoje imię w zmiennej `name` było napisane wielkimi literami.
+Make your name in the `name` variable uppercase.
 
-**Kolejną metodą jest sprawdzanie pozycji podtekstu:**
+**Another method is to check the position of a substring within a string:**
 
 ```js
 text_3.indexOf('Jack'); // 7
 ```
 
-Sprawdź, jaką pozycję zajmuje w Twoim imieniu literka 'a'.
+Find out the position of the letter 'a' in your first name.
 
-**Możemy również zamienić fragmenty tekstu:**
+**We can also replace parts of a string:**
 
 ```js
 text_3.replace('Jack', 'Mary');
 ```
 
-W ten sposób zastąpimy pierwsze wystąpienie danego ciągu znaków \(w naszym przypadku 'Jack'\) nowym stringiem \('Mary'\).
+This will replace the first occurrence of the given string \(in our case 'Jack'\) with a new string \('Mary'\).
 
-### Zadanie
+### Task
 
-Stwórz zmienną `hello` i przypisz do niej następujący tekst: "Hello, \[tu podaj swoje imię\]!". Następnie, korzystając z metody `replace`, spraw, aby tekst wyglądał tak: "Hello, JavaScript!".
+Create a variable named `hello` and assign the following text to it: "Hello, \[enter your name\]!". Then, using the `replace` method, modify the text to look like this: "Hello, JavaScript!".
 
