@@ -1,73 +1,75 @@
 ---
-title: 8. Pętle
+title: 8. Loops
 layout: post
 ---
 
-Załóżmy, że chcemy coś zrobić kilka razy, np. wysłać 5 takich samych wiadomości, albo nadać identyfikator 30 kolejnym książkom w naszym księgozbiorze. Robienie kilkukrotnie tej samej rzeczy jest mało optymalne. Dlatego możemy wykorzystać pętle. Żeby powtórzyć coś kilkukrotnie potrzebujemy licznika - by wiedzieć, w którym momencie jesteśmy i czy powinniśmy już skończyć, czy nadal powtarzać dany skrypt.
+Let's say we want to do something multiple times, for example, send the same message five times or assign an identifier to the next 30 books in our book collection. Repeating the same action multiple times is not very efficient. That's where we can use loops. To repeat something multiple times, we need a counter - to know where we are and whether we should finish or continue repeating the given script.
 
-Załóżmy, że chcemy w konsoli napisać pięć razy wiadomość "Cześć! Miło nam Cię powitać na girls.js!". Możemy to zrobić w ten sposób:
+For instance, let's assume that we want to write the message "Hi, we are happy to welcome you to girls.js!" five times in the console. We can do it this way:
 
 ```js
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
+console.log("Hi, we are happy to welcome you to girls.js!");
+console.log("Hi, we are happy to welcome you to girls.js!");
+console.log("Hi, we are happy to welcome you to girls.js!");
+console.log("Hi, we are happy to welcome you to girls.js!");
+console.log("Hi, we are happy to welcome you to girls.js!");
 ```
 
-Trochę dużo pisania, prawda? Możemy ten kod uprościć!
+That's a lot of typing, right? We can simplify this code!
 
-### Pętla for
 
-Pętla for wygląda w następujące sposób:
+### The for Loop
+
+The for loop looks like the following:
 
 ```js
-for (start licznika; wyrażenie określające czy należy zakończyć pętlę czy jeszcze nie; zwiększanie/pomniejszanie licznika ) {
-    kod który chcemy powtórzyć określoną liczbę razy
+for (counter initialization; condition to check whether to finish the loop or not; increase/decrease the counter) {
+    code to repeat a certain number of times
 }
 ```
 
-Przeróbmy nasz kod z wiadomością!
+Let's modify our code with the message!
 
-start licznika - zaczynamy od 0, czyli tworzymy zmienną \(która istnieje tylko na potrzeby pętli\),
+counter initialization - we start from 0, so we create a variable \(which exists only for the loop\) as follows:
 
 `let i = 0;`
 
-koniec pętli - powtarzamy działanie dopóki licznik nie osiągnie 5, czyli
+end of the loop - we repeat the action until the counter reaches 5, which is:
 
 `i <= 5;`
 
-zwiększanie/pomniejszanie licznika - po każdym przejściu pętli nasz licznik zwiększa się o jeden, czyli
+increasing/decreasing the counter - after each loop iteration, our counter increases by one, so:
 
 `i += 1`
 
-Pętla będzie więc wyglądać w następujący sposób:
+Therefore, the loop will look like this:
 
 ```js
 for (let i = 0; i <= 5; i += 1) { 
-     console.log("Cześć! Miło nam Cię powitać na girls.js!");
+     console.log("Hi, we are happy to welcome you to girls.js!");
 }
 ```
 
-Licznik możemy też zmniejszać. Wiemy, że wiadomości ma być 5, więc możemy to również zapisać tak:
+We can also decrease the counter. Since we want the message to be repeated five times, we can write it like this:
 
-start licznika - zaczynamy od 5 czyli `let i = 5;`
+counter initialization - we start from 5, so `let i = 5;`
 
-koniec pętli - powtarzamy dopóki nie osiągniemy 0, czyli dopóki `i` jest większe od zera,`i > 0;`
+end of the loop - repeat until we reach 0, that is, until `i` is greater than zero,`i > 0;`
 
-zwiększanie/pomniejszanie licznika - każda pętla odlicza od pięciu w dół, czyli `i -= 1;`
+increase/decrease counter - each loop counts down from five, i.e. `i -= 1;`
+
 
 ```js
 for (let i = 5; i > 0; i -= 1) {
-  console.log("Cześć! Miło nam Cię powitać na girls.js!");  
+  console.log("Hi, we are happy to welcome you to girls.js!");  
 }
 ```
 
-Spróbuj w swoim pliku JS zapisać powyższą pętlę. Spraw, by kod powtórzył się 10 razy.
+Try writing the above loop in your JS file. Make sure the code repeats 10 times.
 
-Czas na nasze książki! Przypomnijmy - chcemy dodać identyfikator (id) kolejnym 30 książkom.
+It's time for our books! Let's remember - we want to assign an identifier (id) to the next 30 books.
 
-Możemy to zrobić tak:
+We can do it like this:
 
 ```js
 console.log("id-1");
@@ -80,25 +82,22 @@ console.log("id-6");
 console.log("id-30");
 ```
 
-Ale taki kod zająłby bardzo wiele miejsca. Wykorzystajmy więc pętle! Zauważmy, że tym razem powtarzamy tę samą czynność, jednak string który chcemy wyświetlić, zmienia się. Zwiększa się dokładnie o 1. Podobnie zachowuje się nasz licznik!
-
-Sprawdź co się wydarzy, gdy spróbujesz wyświetlić w konsoli wartość naszego licznika \(to jest zmienna więc wystarczy wpisać jej nazwę\).
+But such code would take up a lot of space. So let's use loops! Notice that this time we are repeating the same action, but the string we want to display is changing. It increases exactly by 1. Our counter behaves in a similar way!
+Check what happens when you try to display the value of our counter in the console \(since it's a variable, simply enter its name\).
 
 ```js
 for (let i = 0; i < 30; i += 1){
   console.log(i);
 }
 ```
-
-Konsola wyświetliła nam liczby od 0 do 29. W końcu zaczynamy liczyć od 0 i powtarzamy kod dopóki jest mniejsze od 30. Gdy osiąga 30 zatrzymujemy pętlę. Musimy więc lekko przerobić naszą pętlę. Nasze id zaczyna się od 1, a powtarzamy pętlę, dopóki elementy są mniejsze **bądź równe** 30.
+The console displayed numbers from 0 to 29. After all, we start counting from 0 and repeat the code as long as it is less than 30. When it reaches 30, we stop the loop. Therefore, we need to slightly modify our loop. Our id starts from 1, and we repeat the loop as long as the elements are less than **or equal** to 30.
 
 ```js
 for (let i = 1; i <= 30; i += 1) {
   console.log(i);
 }
 ```
-
-Super! Teraz dodajmy brakujący element id, czyli string "id-". Możemy do tego wykorzystać dodawanie. Kiedy dodajemy string do liczby JS zamienia całość na string!
+Great! Now let's add the missing id element, which is the string "id-". We can use concatenation for this. When we add a string to a number, JavaScript converts the whole thing into a string!
 
 ```js
 for (let i = 1; i <= 30; i += 1) { 
@@ -106,37 +105,37 @@ for (let i = 1; i <= 30; i += 1) {
 }
 ```
 
-### Zadanie:
+### Task
 
-Wykorzystaj powyższą pętlę, by nadać id 50 książkom. Zapisz kod w swoim pliku JS.
+Use the above loop to assign ids to 50 books. Write the code in your JS file.
 
 
-### Pętla while
+### The while Loop
 
-Oprócz pętli `for` w języku JavaScript występuje pętla `while`, której struktura wygląda tak:
+Aside from the `for` loop in JavaScript, there is a `while` loop, the structure of which looks like this:
 
 ```js
-while (wyrażenie sprawdzające czy pętle należy wykonywać dalej) {
-    kod który chcemy powtórzyć dopóki jest spełniany warunek w nawiasie
+while (expression that checks if the loops should be executed further) {
+    the code you want to repeat as long as the condition in parentheses is met
 }
 ```
 
-Pętla `for` jest wykonywana określoną ilość. Pętla `while` działa, dopóki wyrażenie w nawiasach jest prawdziwe.
-
-Zauważ jednak, że w tej pętli nie ma licznika. Dlatego często dodaje się go ręcznie. Wracając do naszej wiadomości do 5 osób:
+The `for` loop is executed a specific number of times. The while loop runs as long as the expression in parentheses is true.
+However, notice that this loop doesn't have a counter. That's why it's often added manually. Let's go back to our message for 5 people:
 
 ```js
 let counter = 0;
 while(counter < 5) {
-    console.log("Cześć! Miło nam Cię powitać na girls.js!");  
+    console.log("Hi, we are happy to welcome you to girls.js!");  
     counter += 1;
 
 }
 ```
 
-Zmienną, która jest naszym licznikiem definiujemy poza pętlą. Przy każdej pętli zwiększamy licznik o 1.
+We define the variable that serves as our counter outside the loop. With each iteration, we increase the counter by 1.
 
-### Zadanie:
+### Task
 
-W swoim pliku JS napisz taką pętlę `while`, która 10 razy napisze w konsoli "JavaScript jest super!".
+In your JS file, write a `while` loop that writes "JavaScript is awesome!" in the console 10 times.
+
 
