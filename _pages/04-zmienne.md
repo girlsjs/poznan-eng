@@ -20,7 +20,7 @@ var sum = 33 + 5;
 Just because we assigned a value to a variable doesn't mean that it must always remain the same. We have the ability to overwrite that variable by assigning it a new value. For example, we can simply write `sum = 99`. From that point on, `sum` in JavaScript will represent the value 99. When we overwrite the value of a variable, we don't write `var` before its name. We only use `var` when defining the variable for the first time. Afterwards, we simply use the variable's name.
 
 
-### let and const®
+### let and const
 
 Currently, the ES6 standard is also being used, which is a newer version of the JavaScript language. According to this standard, variables can be created using the keywords `let` or `const`.
 
@@ -45,5 +45,8 @@ Considering the benefits that the differences between `let` and `const` provide,
 
 ### Task
 
-Create two variables in the console with arbitrary numbers. One using `let` and the other using `const`. Try overwriting both values and see what is displayed in the console.
+Create two variables in the console with arbitrary numbers. 
+One using `let` and the other using `const`. 
+Try overwriting both values and see what is displayed in the console.
+
 
