@@ -1,105 +1,107 @@
 ---
-title: 10. Funkcje
+title: 10. Functions
 layout: post
 ---
 
-Czasami chcemy wykonywać podobne rzeczy dla różnych wartości. Np. chcemy pomalować całe mieszkanie i musimy policzyć powierzchnię ścian dla każdego pokoju. Mamy pokoje o różnych wymiarach, ale samo liczenie będzie wyglądać dokładnie tak samo:
+Sometimes we want to perform similar actions for different values. For example, we want to paint the entire house and need to calculate the wall area for each room. We have rooms with different dimensions, but the calculation process will be exactly the same:
 
-Malujemy pokój o wymiarach 6m x 5m i wysokości 2,5 m.
+We're painting a room with dimensions 6m x 5m and a height of 2.5m.
 
-Sumujemy szerokości ścian: 2\*6 + 2\*5 = 22
+We add up the widths of the walls: 2*6 + 2*5 = 22
 
-Wyliczamy powierzchnię ścian: 22 × 2,5 = 55
+We calculate the wall area: 22 × 2.5 = 55
 
-Wyliczamy powierzchnię sufitu: 6 × 5 = 30
+We calculate the ceiling area: 6 × 5 = 30
 
-Dodajemy powierzchnię ścian i sufitu: 55 + 30 = 85
+We add the wall and ceiling areas: 55 + 30 = 85
 
-I tak dla 7 różnych pomieszczeń w naszym domu. Ale możemy to skrócić. W końcu chodzi o to by zrobić coś takiego:
+And we repeat this for 7 different rooms in our house. But we can simplify this. After all, we want to do something like this:
+
 
 ```js
-let x = jedna_sciana;
-let y = druga_sciana;
-let z = wysokosc;
-let szerScian = 2*x + 2*y;
-let powScian = szerScian * wysokosc;
-let powSufitu = x * y;
-let powmalowania = powScian + powSufitu;
+let x = first_wall;
+let y = second_wall;
+let z = height;
+let wallsWidth = 2*x + 2*y;
+let wallsSurf = wallWidth * height;
+let ceilingSurf = x * y;
+let painting = wallsSurf + ceilingSurf;
 ```
 
-Nasze zmienne elementy to x, y i z.
+Our variable elements are x, y, and z.
 
-Do wykonywania takich czynności przyda nam się funkcja. Definicja funkcji wygląda następująco:
+To perform such actions, we can use a function. The function definition looks like this:
 
 ```js
-function nazwaFunkcji() {
-    co ma się wydarzyć;
+function functionName() {
+    what should happen;
 }
 
-np.:
-function powitanie() {
+For example:
+function greeting() {
     console.log('Hello World!');
 }
 ```
 
-Teraz funkcję należy wywołać:
+Now we need to call the function:
 
 ```js
-nazwaFunkcji();
-powitanie();
+functionName();
+greeting();
 ```
 
-Przy każdym wywołaniu funkcji zadziała ona tak samo.
+Each time the function is called, it will do the same thing.
 
-Ale co z naszymi zmiennymi parametrami? Otóż w nawiasach przy nazwie funkcji określmy właśnie te parametry. Np.
+But what about our variable parameters? Well, we define those parameters in parentheses after the function name. For example:
 
 ```js
-function powitanie(name) {
+function greeting(name) {
     console.log('Hello ' + name);
 }
 ```
 
-Przy wywołaniu w miejscu parametru należy wstawić istniejące dane, np.
+When calling the function, we need to provide the actual data in place of the parameter. For example:
 
 ```js
-powitanie('Marta');
+greeting('Marta');
 >>> Hello Marta
-powitanie('Ania');
+greeting('Ania');
 >>> Hello Ania
 ```
 
-Wróćmy do liczenia powierzchni: nasze zmienne parametry to szerokość jednej ściany, drugiej ściany i wysokość, czyli:
+Let's go back to calculating the surface area. Our variable parameters are the width of one wall, the width of the second wall, and the height. So it looks like this:
 
 ```js
-function powierzchniaMalowania(sciana1, sciana2, wysokosc) {
+function paintingSurface(wall1, wall2, height) {
     ....
 }
 ```
 
-Teraz wnętrze naszej funkcji:
+Now, let's define the content of our function:
 
 ```js
-function powierzchniaMalowania(sciana1, sciana2, wysokosc) {
-    var x = sciana1;
-    var y = sciana2;
-    var z = wysokosc;
-    var szerScian = 2*x + 2*y;
-    var powScian = szer_scian * wysokosc;    
-    var powSufitu = x * y;
-    var powMalowania = powScian + powSufitu;
+function paintingSurface(wall1, wall2, height) {
+    var x = wall1;
+    var y = wall2;
+    var z = height;
+    var wallsWidth = 2*x + 2*y;
+    var wallsSurf = szer_scian * height;    
+    var ceilingSurf = x * y;
+    var paintingSurf = wallsSurf + ceilingSurf;
 
-    console.log(powMalowania)
+    console.log(paintingSurf)
 }
 ```
 
-I jej wywołanie:
+And call the function:
 
 ```js
-powierzchniaMalowania(6, 5, 2.5);
-powierzchniaMalowania(3, 4, 2.5);
+paintingSurface(6, 5, 2.5);
+paintingSurface(3, 4, 2.5);
 ```
 
-### Zadanie:
+### Task:
 
-W swoim pliku JS napisz funkcję o nazwie `helloGirlsJS`, która po wywołaniu wyświetli następujący napis: "Cześć, \[tu poda imię osoby podanej w wywołaniu\]! Witaj na girls.js!".
+In your JS file, create a function named `helloGirlsJS` that, when called, displays the following message: "Hi \[here it will output the name of the person given in the function call\]! We are happy to welcome you to girls.js!".
+
 
