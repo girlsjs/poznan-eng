@@ -1,21 +1,21 @@
 ---
-title: 14. Jesteś obiektem
+title: 14. You're an object
 layout: post
 ---
 
-... bo wszystko jest obiektem ;\) To kolejny typ danych. Wygląda następująco:
+..because everything is an object ;/) It's another data type. It looks like this::
 
 ```js
-let zmienna = {
-    klucz: wartosc,
-    klucz2: wartosc2,
-    klucz3: wartosc3
+let variable = {
+    key1: value1,
+    key2: value2,
+    key3: value3
 }
 ```
 
-Jak widzisz, przypomina tablicę. Z tym że w tablicy bardzo duże znaczenie ma kolejność elementów które się w niej znajdują. W przypadku obiektów kluczowe są... klucze ;\)
+As you can see, it resembles an array. However, in an array, the order of elements is very significant. In the case of objects, the keys are crucial ;\)
 
-Gdyby przedstawić jakąś osobę jako obiekt, moglibyśmy to zrobić w następujący sposób:
+If we want to represent a person as an object, we could do it in the following way:
 
 ```js
 let person = {
@@ -25,26 +25,26 @@ let person = {
 }
 ```
 
-By odwołać się do jakiegoś elementu obiektu trzeba odwołać się do jego klucza, np.:
+To access a specific element of an object, we need to refer to its key, for example:
 
 ```js
 person.hobby;
 ```
 
-Do istniejącego obiektu możemy dodawać nowe elementy:
+We can add new elements to an existing object:
 
 ```js
 person.city = 'Poznań';
 console.log(person);
 ```
 
-Możemy je także usuwać:
+We can also delete elements:
 
 ```js
 delete person.hobby;
 ```
 
-Czasami w obiekcie może być inny obiekt:
+Sometimes, an object can contain another object:
 
 ```js
  let person = {   
@@ -60,7 +60,7 @@ Czasami w obiekcie może być inny obiekt:
 }
 ```
 
-Jak wyświetlić imię siostry?
+How to display the sister's name?
 
 ```js
 person.family.sister;

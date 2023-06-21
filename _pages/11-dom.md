@@ -3,27 +3,27 @@ title: 11. DOM
 layout: post
 ---
 
-DOM, czyli **Document Object Model** pozwala językowi JS odzwierciedlić układ strony HTML.
+DOM, which stands for **Document Object Model**, allows the JavaScript language to represent the structure of an HTML page.
 
-W narzędziach developerskich wróćmy do zakładki "Elements". Tam widać całą naszą stronę. Ale jak się odwołać do jakiegoś elementu za pomocą JSa?
+In the developer tools, let's go back to the "Elements" tab. There, you can see the entire page. But how can we refer to an element using JavaScript?
 
-Wróćmy do zakładki "Console". Do elementów HTML możemy się dowoływać poprzez ich:
+Let's go back to the "Console" tab. We can refer to HTML elements using:
 
 - **id** - `getElementById`
 
-- **tag** \(np. div, p, ul\) - `getElementsByTagName`
+- **tag** \(e.g. div, p, ul\) - `getElementsByTagName`
 
-- **klasę** - `getElementsByClassName`
+- **class** - `getElementsByClassName`
 
-- **selektor** - `querySelector` i `querySelectorAll` \(pierwsza zwraca pierwszy element z pasujących, druga zwraca wszystkie pasujące elementy\)
+- **selector** - `querySelector` i `querySelectorAll` \(the first one returns the first matching element, and the second one returns all matching elements\)
 
-Spróbujmy teraz pobrać do zmiennej nagłówek ze strony, z którą pracujesz. Zobacz, że w pliku `index.html` masz tag `<h1>`, a w nim jakąś treść. Pobierz ten element do zmiennej korzystając z metody `querySelector`. Aby ta metoda zadziałała, musisz ją wywołać na dokumencie HTML, czyli `document` , a potem podać wybrany selektor w nawiasie okrągłym. Twój kod powinien wyglądać tak:
+Now, let's try to store the header element from the page you're working with in a variable. You'll notice that in the `index.html` file, there's an `<h1>` tag with some content. Retrieve that element into a variable using the `querySelector` method. To make this method work, you need to call it on the HTML document, which is `document`, and then provide the chosen selector inside parentheses. Your code should look like this:  
 
 `let header = document.querySelector("h1");`
 
-Wypisz teraz tę zmienną w konsoli i sprawdź, czy zapisał się do niej element HTML. Co widzisz?
+Now, print this variable in the console and check if the HTML element has been stored in it. What do you see?
 
-Jak umiemy już pobierać elementy do zmiennych, możemy działać dalej! 
+Once we know how to retrieve elements into variables, we can move forward! 
 
-🪄 Pora na trochę magii!
+🪄 It's time for some magic!
 

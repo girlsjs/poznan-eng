@@ -1,145 +1,143 @@
 ---
-title: 13. A jednak się kręci! 🪐
+title: 13. And yet it's spinning! 🪐
 layout: post
 ---
 
-Kopernik wstrzymał Słońce, ruszył Ziemię. My poruszymy wszystkie 8 planet!
+Copernicus stopped the Sun, and moved the Earth. We will move all 8 planets!
 
-Pobierzcie naszą paczkę: [LINK](https://drive.google.com/file/d/1nbT2_pX-eKDJi1JIGvDzoB4Tr_rCfAjk/view)
+Download our package:  [LINK](https://drive.google.com/file/d/1nbT2_pX-eKDJi1JIGvDzoB4Tr_rCfAjk/view)
 
-W środku znajdziecie plik index.html, main.js oraz main.css.
+Inside, you will find the index.html, main.js, and main.css files.
 
-Kiedy otworzycie plik index.html w przeglądarce zobaczycie 9 zdjęć planet.
+When you open the index.html file in a browser, you will see 9 planet images.
 
-Teraz zajrzyjmy do tego pliku w edytorze tekstu.
+Now let's take a look at this file in a text editor.
 
-Nasze planety to elementy listy:
+Our planets are list elements:
 
 ```markdown
 <ul class="carousel">
     <li class="single-slide">…</li>
 </ul>
 ```
+As you can guess, our task is to create a carousel. We will start with its proper layout. We will use CSS styles for that, which we will include in the main.css file. To link the styles to our HTML file, we need to add another element between the &lt;head&gt;&lt;/head&gt; tags:
 
-Jak możecie się domyślić, naszym zadaniem jest stworzenie karuzeli. Zaczniemy od jej odpowiedniego ułożenia. Posłużą nam do tego style CSS które zamieścimy w pliku main.css. By podpiąć style do naszego pliku html musimy między tagami &lt;head&gt;&lt;/head&gt; dodać kolejny element:
+
 
 ```markdown
 <link rel="stylesheet" type="text/css" href="sciezka/do/pliku.css">
 ```
+If you do it correctly, you should see a starry sky.
 
-Jeśli zrobicie to poprawnie, powinnyście zobaczyć rozgwieżdżone niebo.
-
-Czas dodać nasze style. Pomoże Wam w tym strona [https://www.w3schools.com/css/](https://www.w3schools.com/css/). Nie bójcie się również korzystać z wyszukiwarki Google. By dodać jakiś styl odwołujmy się do klas poszczególnych elementów. By to zrobić w plku CSS musimy zapisać:
+Now let's add our styles. You can find help on this website: [https://www.w3schools.com/css/](https://www.w3schools.com/css/). Don't hesitate to use Google search as well. To apply a style to specific elements, we need to refer to their class names. To do this in the CSS file, we need to write:
 
 ```css
-.nazwaKlasy {
-    wlasciwosc: wartosc;
+.className {
+    property: value;
 }
 ```
 
-np.:
+for example:
 
 ```css
 .carousel {
     background-color: green;
 }
 ```
+The background of the entire carousel should turn green.
 
-Tło całej karuzeli powinno zrobić się zielone.
+Let's start by arranging the planets side by side. Each slide should have a `width` of `800px`. Set the width of the entire carousel to approximately `7300px`.
 
-Zacznijmy od ułożenia planet obok siebie. Niech każdy slajd ma szerokość \(`width`\) 800px.  Ustawmy szerokość całej karuzeli na ok. 7300px.
+Also, let's make sure each planet is centered within slide \(`text-align: center;`\). But we still see more than one planet. So let's specify the `width` of the stage \(`.carousel-stage`\) and hide what doesn't fit inside \(`overflow: hidden;`\). Let's also center our stage \(`.carousel_stage, margin-left: auto; margin-right: auto;`\).
 
-Sprawmy też, by każda planeta znajdowała się na środku slajdu \(`text-align: center;`\). Ale nadal widzimy więcej niż jedną planetę. Określmy więc szerokość \(`width`\) sceny \(`.carousel-stage`\), i schowajmy to, co się w niej nie zmieści \(`overflow: hidden;`\). Wycentrujmy też naszą scenę \(`.carousel_stage, margin-left: auto; margin-right: auto;`\).
+Now for the navigation. Do you see two arrows below the carousel? First, let's position them at the appropriate height, which is halfway up the carousel. Initially, give the carousel \(`.carousel`\) a `position: relative`. We will position the arrows relative to it. To make the arrows not appear under the carousel but "float in the air," give the navigation \(`.carousel-nav`\) a `position: absolute`. Let's place the arrows at the halfway point of the carousel's height. So, add `top: 50%` to the styles \(the navigation will then be positioned at 50% of the parent's height, which has `position: relative`\). But something doesn't quite match. The arrows are slightly too low. Exactly half their height too low. So let's apply a small transformation: `transform: translateY(-50%)`.
 
-Teraz nawigacja. Widzicie dwie strzałki pod karuzelą? Najpierw umieścimy je na odpowiedniej wysokości - czyli w połowie wysokości karuzeli. Na początku nadajmy karuzeli \(`.carousel`\) `position: relative`. To w stosunku do niej będziemy ustawiać strzałki. By strzałki nie były pod karuzelą, a 'unosiły się w powietrzu' nadajmy nawigacji \(`.carousel-nav`\) `position:absolute`. Umieśćmy strzałki w połowie wysokości karuzeli. Do styli dodajmy więc `top: 50%` \(nawigacja znajdzie się wtedy w 50% wysokości rodzica, który posiada `position: relative`\). Ale coś nie do końca się zgadza. Strzałki są trochę za nisko. Dokładnie połowę swojej wysokości za nisko. Dokonamy więc małej transformacji: `transform: translateY(-50%)`.
+The next step is to place one arrow on the right and the other on the left side of the carousel. Use `float: left;` and `float: right;`, respectively.
 
-Następny krok to umieszczenie jednej strzałki po prawej, a drugiej po lewej stronie karuzeli. Odpowiednio `float: left;` i `float: right;`.
+It's time to set our planets in motion!
 
-Czas na wprawienie naszych planet w ruch!
-
-Na początek podepnijmy do naszej strony plik `main.js`. Robimy to podobnej zasadzie jak plik CSS z tym, że używamy tagu `script` , a ścieżkę wpisujemy w atrybucie `src`.
+First, let's link the `main.js` file to our page. We do it similarly to the CSS file, but we use the `script` tag and include the path in the `src` attribute.
 
 ```markdown
 <script src="sciezka/do/pliku.js"><script>
 ```
 
-Wejdź na stronę, a następnie w konsolę przeglądarki. Jeśli wszystko działa, powinien pojawić się komunikat.
+Go to the website, and then open the browser console. If everything is working, a message should appear.
 
-Pomyślmy, jak ma działać nasza karuzela. Wyobraźmy sobie, że jest to taśma filmowa i w określonych momentach \(po kliknięciu strzałki lub po upływie określonego czasu\) cała taśma ma się przesunąć o szerokość jednej klatki \(czyli jednego slajdu\).
+Let's think about how our carousel should work. Imagine that it is a film strip, and at certain moments \(after clicking the arrow or after a specific time has elapsed\), the entire strip should move by the width of one frame \(which is one slide\).
 
-Przejdźmy więc do pliku `main.js`. Usuńmy aktualny kod. Zaczniemy od określenia naszych zmiennych:
+So, let's go to the main.js file. Let's remove the current code. We'll start by defining our variables:
 
-`carousel` dla karuzeli
+`carousel` for the carousel
 
-`stage` dla sceny naszej karuzeli
+`stage` for the carousel scene
 
-`prev` dla przycisku "wstecz"
+`prev` for the "previous" button
 
-`next` dla przycisku "następny"
+`next` for the "next" button
 
-Nie zapomnij o słowach kluczach definiujących zmienne \(czyli używamy tu `let` albo `const`\).
+Don't forget the keywords for defining variables \(i.e., use `let` or `const` here\).
 
-Teraz pobierzemy elementy HTML do określonych przez nas zmiennych. Posłuży nam do tego znana już metoda `querySelector()`, która wyświetli nam pierwszy element na stronie o określonym atrybucie, np. klasie.
+Now, let's retrieve the HTML elements for our specified variables. We'll use the familiar `querySelector()` method, which will display the first element on the page with a specified attribute, such as a class.
 
 ```js
 var carousel = document.querySelector('.carousel');
 ```
 
-Pobierz w ten sposób elementy dla reszty zdefiniowanych zmiennych \(czyli dla naszej sceny i dwóch przycisków\).
+Download the elements for the remaining defined variables \(i.e., for our scene and two buttons\) using the same approach.
 
-Zostanie nam jeszcze jedna zmienna do zdefiniowania: `slide` dla pojedynczych elementów karuzeli. Tu musimy wziąć wszystkie slajdy, dlatego skorzystamy z metody `querySelectorAll()`.
+We still have one variable to define: `slide` for individual carousel elements. Here, we need to retrieve all slides, so we'll use the `querySelectorAll()` method.
 
-Zróbmy to ze wszystkimi elementami na stronie :\)
+Let's do the same with all elements on the page :\)
 
-Kolejny krok, to określenie, o jaką szerokość ma się przesuwać nasza “taśma”. Jak już wspomnieliśmy, jest to szerokość jednego slajdu. Spróbujmy więc “wyciągnąć” tę wartość. Wykorzystamy do tego właściwość `clientWidth` która zwraca szerokośc danego elementu. Spróbujmy:
+The next step is to determine the width by which our "strip" should move. As we mentioned, it's the width of one slide. Let's try to "extract" this value. We'll use the `clientWidth` property, which returns the width of the specified element. Let's try:
 
 ```js
 var slideWidth = slide.clientWidth;
 console.log(slideWidth);
 ```
-
-Sprawdźmy, co wyświetli się w konsoli. Pojawił nam się komunikat, że wartość jest niezdefiniowana. Sprawdźmy więc, co kryje się pod zmienną `slide`. Pojawia się lista elementów. JS nie potrafi określić szerokości listy elementów. Nasza zmienna slide zawiera w sobie bowiem tablicę ze wszystkimi elementami o klasie `slide`, jakie udało jej się znaleźć w dokumencie. Nasz kod poradzi sobie za to z jednym elementem, np. pierwszym. Pierwszy element listy ma index zero, a więc:
+Check what appears in the console. It displays a message that the value is undefined. So let's see what the variable `slide` contains. It shows a list of elements. JS cannot determine the width of the list of elements because our variable `slide` contains an array with all elements having the class `slide` that it found in the document. However, our code can handle a single element, for example, the first one. The first element in the list has an index of zero, so:
 
 ```js
 var slideWidth = slide[0].clientWidth;
 console.log(slideWidth);
 ```
 
-Kolejny krok to określenie, który slajd właśnie nam się wyświetla. Początkowo będzie to pierwszy slajd, ale jak wiemy w JS pierwszy element to element 0.
+The next step is to determine which slide is currently displayed. Initially, it will be the first slide, but as we know, in JS, the first element is element 0.
 
 ```js
 var currentIndex = 0;
 ```
 
-A co, gdy dotrzemy do ostatniego elementu? Powinniśmy wrócić do początku slajdu. Znajdźmy więc ostatni element. Najpierw określimy liczbę wszystkich elementów. Posłuży nam do tego właściwość length.
+What happens when we reach the last element? We should go back to the first slide. So let's find the last element. First, we'll determine the total number of elements using the `length` property.
 
 ```js
 var slidesNumber = slide.length - 1;
 ```
 
-Skąd wzięło się -1? `Slide.length` to liczba slajdów. Czyli 9. Jednak w JavaScript liczenie elementów zaczynamy od 0, a nie 1. Ostatni slajd nie będzie miał wartości 9 tylko 8.
+Where did the -1 come from? The `Slide.length` is the number of slides. which is 9. However, in JavaScript, element counting starts from 0, not 1. So the last slide won't have a value of 9 but 8.
 
-OK. Teraz czas na napisanie funkcji, które wprawi nasz układ słoneczny w ruch i przesunie całą karuzelę o odpowiednią szerokość. Wykorzystamy do tego style. Spróbujmy najpierw za pomocą CSSa przesunąć naszą karuzelę w lewo o jeden slajd, czyli 800px. Pomogą nam w tym właściwości `position`,` left` i `right`.
+OK, now it's time to write functions that will animate our carousel and move the entire carousel by the appropriate width. We'll use styles for this. Let's first try using CSS to move our carousel to the left by one slide, or 800px. The `position`, `left`, and `right` properties will help us with that.
 
-Gdy już się Wam uda wróćcie do pliku JS. Będziemy manipulować wartościami CSS za pomocą funkcji JavaScript.
+Once you've accomplished that, go back to the JS file. We'll manipulate CSS values using JavaScript functions.
 
-Stwórzmy funkcję o nazwie `goToSlide()`Jej wynikiem ma być zmieniona wartość właściwości `left` naszej karuzeli. Ma ona wynieść tyle, by pokazać odpowiedni slajd. Mała podpowiedź - wykorzystamy do tego zmienną `slideWidth` i pozycję slajdu, który chcemy zobaczyć.
+Let's create a function called `goToSlide()`. Its result is to be the changed value of the `left` property of our carousel. It is supposed to be enough to show the corresponding slide. A small hint - we will use the `slideWidth` variable for this and the position of the slide we want to see.
 
-Zacznijmy od początku. Aby zmienić wartość `left` karuzeli wykorzystamy metodę `style.left`. Dzięki niej jesteśmy zmienić pozycję danego elementu w stosunku do jego lewej krawędzi.
+Let's start from the beginning. To change the `left` value of the carousel, we'll use the `style.left` method. This allows us to change the position of an element relative to its left edge.
 
 ```js
 function goToSlide() {
     carousel.style.left = ...;
 }
 ```
+Let's think about what value `length` should have to show the second slide. What about the third and fourth slides? Do you notice any general rule?
 
-Zastanówmy się, jaką wartość powinno przyjąć `length` , by pokazać drugi slajd. Jaką, by pokazać trzeci, a czwarty? Czy dostrzegasz jakąś ogólną zasadę?
+Yes! We multiply `slideWidth` by the position of the specific slide!
 
-Tak! Mnożymy `slideWidth` razy pozycję konkretnego slajdu!
+So let's try:
 
-Więc spróbujmy:
+Assume that the variable `index` represents the position of our slide. Let's define it as 3\ (position of the 4th slide\).
 
-Załóżmy, że zmienna `index` to pozycja naszego slajdu. Zdefiniujmy ją jako 3 \(pozycja 4 slajdu\).
 
 ```js
 function goToSlide() {
@@ -147,11 +145,11 @@ function goToSlide() {
 }
 ```
 
-Wywołajmy tę funkcję w konsoli.
+Call this function in the console.
 
-Działa!
+It works!
 
-Tylko pojawia się pewien problem - mamy wiele slajdów, każdy ma inny `index`. Pisanie oddzielnej funkcji dla każdego slajdu byłoby mało wydajne. Wykorzystajmy więc parametry funkcji! Wtedy dla różnych wartości możemy użyć tej samej funkcji.
+However, there's a slight problem - we have multiple slides, each with a different `index`. Writing a separate function for each slide would be inefficient. So let's use function parameters! With that, we can use the same function for different values.
 
 ```js
 function goToSlide(index) {
@@ -159,9 +157,9 @@ function goToSlide(index) {
 }
 ```
 
-Wywołajmy tę funkcję w konsoli wpisując, np. `goToSlide(3);` `goToSlide(1);` `goToSlide(4);`
+Let's call this function in the console by typing, for example, `goToSlide(3);` `goToSlide(1);` ` `goToSlide(4);`.
 
-Działa! Tylko teraz `currentIndex` też powinien się zmienić. Powinien być równy numerowi, który wpisaliśmy jako argument. Dopiszmy wiec do naszej funkcji tę zmianę:
+It works! The only thing is that now the `currentIndex` should also change. It should be equal to the number we entered as an argument. So let's add this change to our function:
 
 ```js
 function goToSlide(index) {
@@ -170,18 +168,18 @@ function goToSlide(index) {
 }
 ```
 
-Przejdźmy do nawigacji :\)
+Let's move on to navigation :\)
 
-Klikanie na przycisk `carousel-next` powinno nas przenosić do slajdu o indeksie większym o 1. Klikanie na przycisk `carousel-prev` powinno nas przenosić do slajdu o indeksie mniejszym o 1 od aktualnego indeksu.
+Clicking on the `carousel-next` button should take us to a slide with an index that is 1 higher. Clicking on the `carousel-prev` button should take us to a slide with an index that is 1 lower than the current index.
 
-Stwórzmy więc dwie funkcje. Na początek
+So let's create two functions. Firstly:
 
 ```js
  function slideToNext() {
  }
 ```
 
-Ma ona przesuwać slajdy do przodu o 1 przy każdym wywołaniu. Czyli wykorzystujemy tu funkcję `goToSlide()`. Tylko co będzie naszym argumentem? Jak wspomnieliśmy wcześniej, każde wywołanie naszej funkcji ma przenosić nas do slajdu o indeksie o 1 większym od indeksu aktualnego slajdu. Indeks aktualnego slajdu przechowujemy w zmiennej `currentIndex`. Czyli nasz argument to `currentIndex + 1`.
+It is supposed to move the slides forward by 1 each time it is called. That is, we are using the `goToSlide()` function here. But what will be our argument? As we mentioned earlier, each call to our function is to move us to a slide with an index 1 greater than the index of the current slide. We store the index of the current slide in the `currentIndex` variable. So our argument is `currentIndex + 1`.
 
 ```js
 function slideToNext() {
@@ -189,46 +187,46 @@ function slideToNext() {
 }
 ```
 
-Zróbmy analogicznie z `slideToPrev`.
+Let's do an analogy with `slideToPrev`.
 
-Kolejny krok to wywołanie obu funkcji podczas klikania na przyciski. Klikanie to wydarzenia \(eventy\), kóre odbywają się na stronie. Mogą być one wywołane prze użytkownika \(jak kliknięcie\), albo jakiś element na stronie. Wysłanie formularza, załadowanie obrazka, to też zdarzenie. Przykładowe zdarzenia na stronie to:
+The next step is to call both functions when clicking on buttons. Clicks are events that take place on the page. They can be triggered by the user \(like a click\), or some element on the page. Submitting a form, loading an image, are also events. Examples of events on the page are:
 
-| Zdarzenie | Opis: |
+| Event: | Description: |
 | :--- | :--- |
-| blur | obiekt przestał być aktywny |
-| change | obiekt zmienił swoją zawartość \(np. pole formularza\) |
-| click | kliknięcie na obiekt |
-| dblclick | podwójne klikniecie na obiekt |
-| focus | wybrnie danego obiektu na stronie |
-| keydown | naciśniemy klawisz na klawiaturze |
-| input | w czasie trzymania klawisza |
-| keyUp | puścimy klawisz na klawiaturze |
-| load | gdy obiekt został załadowany \(może to być nawet cała strona\) |
-| mouseover | gdy kursor znalazł się na danym obiekcie |
-| mouseout | gdy kursor opuścił dany obiekt |
-| contextmenu | gdy kliknięto prawym klawiszem myszki i pojawiło się menu kontekstowe |
-| wheel | gdy kręcimy kółeczkiem myszki |
-| resize | gdy zmieniamy rozmiar okna przeglądarki |
-| select | gdy zawartość obiektu została zaznaczona |
-| submit | gdy formularz został wysłany |
-| unload | użytkownik opuszcza dana stronę |
-| animationstart | animacja css się zacznie |
-| animationend | animacja css się zacznie |
+| blur | object is no longer active |
+| change | The object has changed its content \(e.g., a form field\). |
+| click | click on the object |
+| dblclick | double click on the object |
+| focus | selecting an object on the site |
+| keydown |pressing a key on the keyboard |
+| input | while holding the key |
+| keyUp | releasing a key on the keyboard |
+| load | When the object has been loaded \(it can even be a whole page\). |
+| mouseover | when the cursor is on a particular object |
+| mouseout | when the cursor has left an object |
+| contextmenu | when right clicked and context menu appeared |
+| wheel | when you spin the mouse wheel |
+| resize | when we resize the browser window |
+| select | when the content of the object has been selected |
+| submit | when the form has been sent |
+| unload | user leaves the page |
+| animationstart | css animation will begin |
+| animationend | css animation will end|
 
-Do śledzenia, czy dane wydarzenie miało miejsce posłuży nam metoda `addEventListener`
+We will use the `addEventListener` method to keep track of whether an event has taken place.
 
 ```js
-element.addEventListener('event_jako_string', co_ma_się_wydarzyć, opcjonalnie_true_lub_false);
+element.addEventListener('event_as_string', what_should_happen, optionally_true_lub_false);
 ```
 
-Dla wszystkich wydarzeń na stronie stworzymy osobną funkcję. Nazwiemy ją `bindEvents`:
+We will create a separate function for all events on the page. We will call it `bindEvents`:
 
 ```js
 function bindEvents() {
 }
 ```
 
-Zacznijmy od przycisku wstecz. Jest on pod zmienną `prev`. Na tej zmiennej wywołajmy metodę `addEventListener`:
+Let's start with the back button. It is under the `prev` variable. On this variable, let's call the `addEventListener` method:
 
 ```js
 function bindEvents() {
@@ -236,7 +234,7 @@ function bindEvents() {
 }
 ```
 
-I teraz argumenty. Chcemy śledzić `event` kliknięcia, czyli 'click'. Ma on wywołać funkcję `slideToPrev`. Wstawmy je w odpowiednim miejscu:
+And now the arguments. We want to track the `event` of the click, that is, the `click`. It is to call the `slideToPrev` function. Let's put it in the right place:
 
 ```js
 function bindEvents() {
@@ -244,13 +242,13 @@ function bindEvents() {
 }
 ```
 
-Dodajmy analogiczny event do funkcji `bindEvents` z tym, że dla przycisku `next`.
+Let's add an analogous event to the `bindEvents` function for the `next` button.
 
-Wywołajmy funkcję `bindEvents`, by sprawdzić, czy przyciski działają :\)
+Let's call the `bindEvents` function to see if the buttons work :\)
 
-Super! Spójrz jednak, co się będzie działo, jeśli ciągle będziemy klikać "dalej" lub "cofnij" - planety znikają. Nasza karuzela ciągle się przesuwa o 800px. Musimy ją ograniczyć. Po ostatniej planecie niech wraca do pierwszej, a gdy będziemy chcieli cofnąć się z pierwszej, niech pokaże nam ostatnią planetę.
+Great! However, look what will happen if we keep clicking `next` or `back`. - the planets disappear. Our carousel keeps moving 800px. We need to limit it. After the last planet, let it go back to the first one, and when we want to go back from the first one, let it show us the last planet.
 
-Spójrzmy się jeszcze raz na naszą funkcje:
+Let's take another look at our function:
 
 ```js
 function goToSlide(index) {
@@ -259,9 +257,9 @@ function goToSlide(index) {
 }
 ```
 
-Wszystko, co się dzieje zależy od indeksu. Zróbmy więc tak, by indeks większy od indeksu ostatniej planety wyniósł 0, a indeks mniejszy od indeksu pierwszej planety był równy indeksowi pierwszej.
+Everything that happens depends on the index. So let's make it so that if the index is greater than the index of the last planet, it becomes 0, and if it is less than the index of the first planet, it becomes equal to the index of the first planet.
 
-Posłużą nam do tego instrukcje warunkowe \(if... else\). Czyli, jeśli indeks jest mniejszy od 0 zmieniamy go na wartość `slidesNumber`
+We will use the conditional statement \(if... else\) to do this. That is, if the index is less than 0 we change it to the value of `slidesNumber`.
 
 ```js
 function goToSlide(index) {
@@ -274,7 +272,7 @@ function goToSlide(index) {
 }
 ```
 
-A jeśli jest większy od `slidesNumber` - zmieniamy go na 0.
+And if it is greater than `slidesNumber` - we change it to 0.
 
 ```js
 function goToSlide(index) {
@@ -288,19 +286,19 @@ function goToSlide(index) {
     currentIndex = index;
 }
 ```
+Let's check it out now.
 
-Sprawdźmy teraz.
+Add some more life to the carousel - let it spin on its own. We'll use the already familiar `setInterval` method for this.
 
-Dodajmy trochę więcej życia do karuzeli - niech sama się kręci. Wykorzystamy do tego znaną nam już metodę `setInterval`.
+We should create an `autorotate` function.
 
-Stwórzmy funkcję `autorotate`
 
 ```js
 function autorotate() {
 }
 ```
 
-Niech co 4s \(4000 ms\) wykonuje się funkcja `slideToNext`:
+Let the `slideToNext` function be executed every 4s \(4000 ms\):
 
 ```js
 function autorotate() {
@@ -308,7 +306,7 @@ function autorotate() {
 }
 ```
 
-I wywołajmy funkcję `autorotate`.
+And let's call the `autorotate` function.
 
-I teraz wszystko się kręci! :\)
+And now everything is spinning! :\)
 

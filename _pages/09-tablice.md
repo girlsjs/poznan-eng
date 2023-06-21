@@ -1,27 +1,29 @@
 ---
-title: 9. Tablice
+title: 9. Arrays
 layout: post
 ---
 
-Zmienne, które dotychczas poznałaś, zawierały tylko jeden element - string, liczbę, czy wartość logiczną. Czasami jednak musimy skorzystać z całej listy danych. Do ich przechowywania służą nam tablice.
+Variables you have learned so far have contained only one element - a string, a number, or a boolean value. However, sometimes we need to work with a whole list of data. Arrays are used to store such data.
 
 ```js
-let tablica = ["pomarancza", 34, true, "mandolina", 45 [67, 56, "czerwony"]];
+let array = ["orange", 34, true, "mandolin", 45 [67, 56, "red"]];
 ```
 
-Tablicę tworzymy zapisując dane pomiędzy kwadratowymi nawiasami i oddzielając te elementy od siebie przecinkami. W tablicy możemy przechowywać różne typy danych: stringi, liczby, zmienne typu logicznego, a nawet inne listy.
+We create an array by enclosing the data in square brackets and separating the elements with commas. In an array, we can store different types of data: strings, numbers, boolean variables, and even other lists.
 
-Stwórzmy np. listę znajomych:
+Let's create a list of friends, for example:
 
 ```js
 let friends = ["Michał", "Marta", "Mikolaj", "John", "Natalia", "Ania"];
 ```
 
-Aby wyświetlić element listy odwołujemy się do listy i pozycji danego elementu.
+To display an element from the list, we refer to the list and the position of the desired element.
 
-UWAGA!
 
-Kolejność elementów liczymy od 0. Tak więc:
+NOTE!
+
+The order of elements starts from 0. So:
+
 
 ```js
 console.log(friends[0]);
@@ -31,18 +33,18 @@ console.log(friends[3]);
 >>> John
 ```
 
-W swoim pliku JS stwórz teraz tablicę o nazwie "group", która zawiera imiona wszystkich osób z grupą, z którą pracujesz na warsztacie. Następnie wypisz w konsoli imię pierwszej zapisanej osoby.
+In your JS file, create an array called "group" that contains the names of all the people you're working with in the workshop. Then, print the name of the first person in the console.
 
-Podobnie jak stringi, długość tablicy możemy ustalić dzięki właściwości **length**
+Similar to strings, we can determine the length of an array using the **length** property.
 
 ```js
 console.log(friends.length); 
 >>> 6
 ```
 
-Teraz wypisz w konsoli długość tablicy z imionami osób z Twojej grupy, a następnie wyloguj imię osoby, która jest zapisana jako ostatnia.
+Now, print the length of the array containing the names of people in your group to the console. Then, log the name of the person who is listed as the last one.
 
-Do dodawania nowego elementu służy metoda **push**:
+To add a new element, we use the **push** method:
 
 ```js
 friends.push('Kasia');
@@ -50,12 +52,11 @@ friends.push('Kasia');
 console.log(friends);
 >>> ["Michał", "Marta", "Mikolaj", "John", "Natalia", "Ania","Kasia"]
 ```
+Using this method, we add a new element to the end of the array.
 
-Za jej pomocą dodajemy nowy element na końcu tablicy.
+Add another random name to your "group" array using the `push` method, and then print it to the console.
 
-Dodaj do swojej tablicy "group" jeszcze jedno dowolne imię używając do tego metody `push`, a następnie wypisz je w konsoli.
-
-Możemy również nadpisać istniejący element tablicy o określonej pozycji:
+We can also overwrite an existing element in the array at a specific position:
 
 ```js
 friends[2] = "Tomek";
@@ -64,11 +65,11 @@ console.log(friends);
 >>> ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"]
 ```
 
-Nadpisz ostatnio dodane do swojej tablicy imię innym. Raz jeszcze wypisz ostatnie imię w konsoli.
+Overwrite the most recently added name in your "group" array with a different one. Once again, print the last name to the console.
 
-Różne tablice możemy dodać do siebie. Stwórz tablicę z imionami przyjaciół z pracy i drugą z imionami przyjaciół z imprez.
+We can combine different arrays. Create an array with the names of friends from work and another array with the names of friends from parties.
 
-Aby stworzyć tablicę w której znajdą się imiona wszystkich Twoich przyjaciół użyjemy metody `concat`
+To create an array that contains the names of all your friends, we will use the `concat` method:
 
 ```js
 let work_friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -79,10 +80,9 @@ let all_friends = work_friends.concat(party_friends);
 console.log(all_friends);
 >>> ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia", "Asia", "Kamil", "Bartek", "Ola", "Weronika", "Czarek"]
 ```
+Check the console to see how the new array created using `concat` looks.
 
-Sprawdź w konsoli, jak wygląda nowa tablica powstała za pomocą `concat`.
-
-By "pobrać" kawałek tablicy używamy metody `slice`. Wymaga ona określenia od którego elementu chcemy ciąć i na którym chcemy skończyć
+To "extract" a portion of an array, we use the `slice` method. It requires specifying from which element to start and on which element to end.
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -91,13 +91,12 @@ let part = friends.slice(1, 4);
 console.log(part);
 >>> Marta, Tomek, John
 ```
+Now, create another array whose elements will be the first and second name from the "group" array. Use the `slice` method for this.
 
-Stwórz teraz jeszcze jedną tablicę, której elementami będą pierwsze i drugie imię z tablicy "group". Użyj do tego metody `slice`.
-
-Do usuwania, lub zamieniania kawałka tablicy służy metoda `splice`
+The `splice` method is used to remove or replace a portion of an array.
 
 ```js
-tablica.splice(od którego elementu, ile elementów usunąć, co tam wstawić w zmian)
+array.splice(from which element, how many elements to remove, what to put there in change)
 
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
 
@@ -106,7 +105,8 @@ console.log(friends);
 >>> Michał, Marta, John, Natalia, Ania, Kasia,
 ```
 
-Zaczynam od pozycji 2, usuwam jeden element, żadnego nie dodaję.
+In this example, I start at position 2, remove one element, and do not add any new elements.
+
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -115,32 +115,31 @@ friends.splice(2, 0, "Patrycja");
 console.log(friends);
 >>> Michał, Marta, Patrycja, John, Natalia, Ania, Kasia,
 ```
+I start with the element in the second position, remove one element, add the element "Patrycja".
 
-Zaczynam od elementu na 2 pozycji, usuwam jeden element, dodaje element "Patrycja".
+Now, using `splice`, remove the first name from the "group" array and replace it with another arbitrary name.
+**NOTE:** `friends.slice` does not modify the friends array; it only returns specific elements. `friends.splice` modifies the `friends` array. This is an important distinction.
 
-Usuń teraz za pomocą `splice` pierwsze imię z tablicy "group" i w jego miejsce wstaw inne, dowolne imię.
 
-**UWAGA:** `friends.slice` nie modyfikuje tablicy `friends`, zwraca tylko jej określone elementy. `friends.splice` modyfikuje tablicę `friends`. Jest to ważna różnica. 
+### Searching for an Element
 
-### Wyszukiwanie elementu
-
-do wyszukiwania pozycji elementu służy metoda indexOf. Zwraca ona indeks danego elementu lub -1 jeśli go nie znajdzie
+The `indexOf` method is used to search for the position of an element. It returns the index of the given element or -1 if it is not found.
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
 
 if (friends.indexOf('Marta') !== -1) {
-    console.log('Marta znajduje się w tej tablicy!');
+    console.log('Marta can be found in this array!');
 } else {
-    console.log('Marty nie ma w tej tablicy');
+    console.log('Marta cannot be found in this array!');
 }
 ```
 
-Korzystając z `indexOf()` sprawdź jaką pozycję ma Twoje imię w tablicy "group".
+Using `indexOf()`, check the position of your name in the "group" array.
 
-### Pętla po tablicy
+### Looping through an array
 
-Pętla to doskonały sposób przechodzenia (iterowania) po elementach tablicy. Wykorzystajmy ją do wypisania naszych znajomych. Aby wypisać jakiś element tablicy określamy jego indeks:
+A loop is an excellent way to iterate through the elements of an array. Let's use it to print our friends. To print a specific element of an array, we specify its index:
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -151,16 +150,15 @@ console.log(friends[2]);
 console.log(friends[3]);
 ....
 ```
+However, there are two problems. Firstly, it is not very efficient. Secondly, what if we don't know the number of elements on the list and how many times we need to repeat the same code?
 
-Ale pojawiają się dwa problemy. Po pierwsze, będzie to mało optymalne. Po drugie, co jeśli nie wiem ile jest elementów na liście i jak długo mam powtarzać ten sam kod?
+Let's try using a `for` loop:
 
-Spróbujmy więc pętli `for`:
+counter initialization - the first position in the list has an index of 0, so we start counting from 0: `let i = 0;`
 
-inicjacja licznika - pierwsza pozycja na liście ma index 0, więc zaczynamy liczyć o 0, `let i = 0;`
+counter end - we repeat the loop until it goes through all the elements in the array. We determine the number of elements using the `length` property. So, we repeat the loop as long as the counter is less than the number of friends: `i < friends.length`
 
-koniec licznika - pętlę powtarzamy aż przejdzie po wszystkich elementach listy. Liczbę elementów określamy za pomocą właściwości `length`. Czyli powtarzamy pętlę, dopóki licznik jest mniejszy od liczby moich przyjaciół: `i < friends.length`
-
-powiększanie/zmniejszanie licznika - po każdej pętli idziemy do kolejnej osoby czyli zwiększamy licznika o 1,`i += 1;`
+counter increment/decrement - after each iteration, we move on to the next person, so we increase the counter by 1: `i += 1;`
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -169,29 +167,32 @@ for (let i = 0; i < friends.length; i += 1) {
 }
 ```
 
-Przećwiczmy to jeszcze wracając do naszej wiadomości. Powiedzmy, że chcemy ją spersonalizować i wyświetlić, np.
+Let's practice this again by returning to our message. Let's say we want to personalize it and display something like:
 
-"Cześć Michał! Miło nam Cię powitać na girls.js!"
+"Hi Michał! We are happy to welcome you to girls.js!"
 
-Wystarczy do naszej wcześniejszej pętli dodać brakujący tekst powitania:
+To achieve this, we just need to add the missing greeting text to our previous loop:
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
 for(let i = 0; i < friends.length; i+=1) {
-    console.log("Cześć " + friends[i] +"! Miło nam Cię powitać na girls.js!");
+    console.log("Hi " + friends[i] +"! We are happy to welcome you to girls.js!");
 }
 ```
 
-### Zadanie:
+### Task:
 
-Używając pętli `for` spraw, aby w konsoli pojawił się napis witający na girls.js wszystkie osoby zapisane w Twojej tablicy "group". Tekst ma być następujący: "Cześć \[tu imię osoby\]! Miło nam Cię powitać na girls.js!".
+Using a `for` loop, make the console display on girls.js a greeting message for every person in your "group" array. The text should be as follows: "Hi \[name\]! We are happy to welcome you to girls.js!"
 
+### Task:
 
-
-### Zadanie:
-
-Wykorzystując pętlę znajdź wypisz wszystkie samogłoski ze zdania: 
+Using the loop, find and list all the vowels from the sentence: 
 
 "Nad rzeczką opodal krzaczka, mieszkała kaczka-dziwaczka, lecz zamiast trzymać się rzeczki, robiła piesze wycieczki."
 
-Podpowiedź: string można traktować jak tablicę znaków ;\)
+(it's a polish song for kids - not so rhyming translation: "Above the river near the bush, there lived a quack duck, but instead of sticking to the river, she made hikes.")
+
+Hint1: Polish vowels are: A, E, I, O, U (Ó), Y, Ą, Ę
+
+Hint2: the string can be treated as an array of characters ;-\)
+
