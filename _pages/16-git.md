@@ -52,6 +52,12 @@ Linux: Applications → Accessories → Terminal
 
 GitHub also offers hosting for your pages.
 
+### Authentication on Github
+
+* **Currently** we need to generate a login token, we can no longer log in with a password from the terminal as before.
+
+[See step-by-step instructions here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+
 ### Task:
 
 1. Create a new organization or repository on GitHub.
